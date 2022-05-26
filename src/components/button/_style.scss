@@ -1,0 +1,37 @@
+
+
+.btn {
+  position: relative;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  border: $btn-border-width solid transparent;
+  box-shadow: $btn-box-shadow;
+  cursor: pointer;
+  transition: $btn-transition;
+  outline: none;
+
+  @include button-size($btn-padding-x, $btn-padding-y, $btn-font-size, $border-radius)
+}
+
+.btn-lg {
+  @include button-size($btn-padding-x-lg, $btn-padding-y-lg, $btn-font-size-lg, $border-radius-lg)
+}
+
+.btn-sm {
+  @include button-size($btn-padding-x-sm, $btn-padding-y-sm, $btn-font-size-sm, $border-radius-sm)
+
+}
+
+.btn-primary {
+  @include button-style($primary, $primary, $white)
+}
+
+.btn-danger {
+  @include button-style($danger, $danger, $white)
+}
