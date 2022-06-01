@@ -4,11 +4,13 @@ export type ButtonSize = 'lg' | 'sm' | 'xs' | 'base';
 export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'info' | 'warning';
 export type ButtonHTMLTypes = 'submit' | 'button' | 'reset';
 export interface BaseButtonProps {
+  /** className 自定义类名 */
   className?: string,
   disabled?: boolean,
   size?: ButtonSize,
   href?: string,
-  
+  loading?: boolean,
+  icon?: React.ReactElement,
   type?: ButtonType,
   children?: React.ReactNode,
 }

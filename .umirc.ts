@@ -25,10 +25,11 @@ export default defineConfig({
     hd: {
       // umi-hd 的 750 高清方案（默认值）
       // 根据不同的设备屏幕宽度断点切换高清方案
-      rules: [
-        
-      ],
+      rules: [],
     }
+  },
+  theme: {
+    '@sp-prefix': 'sp'
   },
   cssLoader: {
     localsConvention: 'camelCase',

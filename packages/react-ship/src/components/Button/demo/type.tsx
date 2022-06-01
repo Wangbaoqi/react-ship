@@ -11,6 +11,9 @@ export default () => (
       <Button type='info'>信息按钮</Button>
       <Button type='danger'>危险按钮</Button>
       <Button type='warning'>警告按钮</Button>
+      <Button type='text'>text 按钮</Button>
+      <Button type='link' href='https://wangbaoqi.tech'>link 按钮</Button>
+      <Button>默认按钮</Button>
     </div>
   </div>
 );

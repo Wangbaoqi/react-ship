@@ -1,7 +1,7 @@
 
 @import './var.less';
 
-.btn {
+.@{sp-prefix}-btn {
   position: relative;
   display: inline-block;
   font-weight: @btn-font-weight;
@@ -16,23 +16,77 @@
   cursor: pointer;
   transition: @btn-transition;
   outline: none;
+  .button-size(@btn-padding-x, @btn-padding-y, @btn-font-size, @border-radius, @btn-height);
 
-  .button-size(@btn-padding-x, @btn-padding-y, @btn-font-size, @border-radius, @btn-height)
+  &-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &-icon {
+    margin-right: @btn-base-padding;
+  }
+  &-lg {
+    .button-size(@btn-padding-x-lg, @btn-padding-y-lg, @btn-font-size-lg, @border-radius-lg, @btn-height-lg)
+  }
+  
+  &-sm {
+    .button-size(@btn-padding-x-sm, @btn-padding-y-sm, @btn-font-size-sm, @border-radius-sm, @btn-height-sm)
+  }
+  
+  &-default {
+    .button-style(@slate, @slate, @white)
+  }
+  
+  &-primary {
+    .button-style(@primary, @primary, @white)
+  }
+  
+  &-warning {
+    .button-style(@warning, @warning, @white)
+  }
+  &-info {
+    .button-style(@info, @info, @white)
+  }
+  &-danger {
+    .button-style(@danger, @danger, @white)
+  }
+  
+  &-link {
+    background-color: transparent;
+    box-shadow: none;
+    color: @link-color;
+    &:hover {
+     text-decoration: none;
+    }
+  }
+  &-text {
+    background-color: transparent;
+    box-shadow: none;
+    &:hover {
+      background-color: @gray-100;
+    }
+  }
+  
 }
 
-.btn-lg {
-  .button-size(@btn-padding-x-lg, @btn-padding-y-lg, @btn-font-size-lg, @border-radius-lg, @btn-height-lg)
-}
+// .btn {
+//   position: relative;
+//   display: inline-block;
+//   font-weight: @btn-font-weight;
+//   line-height: @btn-line-height;
+//   color: @body-color;
+//   white-space: nowrap;
+//   text-align: center;
+//   vertical-align: middle;
+//   background-image: none;
+//   border: @btn-border-width solid transparent;
+//   box-shadow: @btn-box-shadow;
+//   cursor: pointer;
+//   transition: @btn-transition;
+//   outline: none;
 
-.btn-sm {
-  .button-size(@btn-padding-x-sm, @btn-padding-y-sm, @btn-font-size-sm, @border-radius-sm, @btn-height-sm)
+//   .button-size(@btn-padding-x, @btn-padding-y, @btn-font-size, @border-radius, @btn-height)
+// }
 
-}
-
-.btn-primary {
-  .button-style(@primary, @primary, @white)
-}
-
-.btn-danger {
-  .button-style(@danger, @danger, @white)
-}

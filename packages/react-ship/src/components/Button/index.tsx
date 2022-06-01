@@ -10,19 +10,50 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   size,
   href,
+  loading,
+  icon,
   children,
   ...rest
 }) => {
 
-  const className = cn('btn', {
-    [`btn-${type}`]: type,
-    [`btn-${size}`]: size,
+  const className = cn('sp-btn', {
+    [`sp-btn-${type}`]: type,
+    [`sp-btn-${size}`]: size,
     'disabled': (type === 'link') && disabled
   })
 
-  if (type === 'link' && href) {
-    return <a href={href} className={className} {...rest}>{ children }</a>
+  
+  const iconBox = () => {
+    if (icon) {
+
+      return React.cloneElement(icon, {
+        className: 'sp-btn-icon',
+        size: 16
+      })
+    }
+    return null;
   }
+
+  const textBox = () => {
+    return (
+      <span className=''>{children}</span>
+    )
+  }
+
+  const content = () => {
+    if (type === 'link' && href) {
+      return <a href={href} {...rest}>{ children }</a>
+    }
+    return (
+      <div className='sp-btn-content'>
+        {iconBox()}
+        {textBox()}
+      </div>
+    )
+  }
+
+
+
 
   return (
     <button
@@ -30,7 +61,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       {...rest}
     >
-      {children}
+      {content()}
     </button>
   )
 }
