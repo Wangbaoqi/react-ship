@@ -5,27 +5,28 @@ import { ButtonProps } from './propsType';
 
 import './style/index.less';
 
-const Button: React.FC<ButtonProps> = ({
-  type,
-  disabled,
-  size,
-  href,
-  loading,
-  icon,
-  children,
-  ...rest
-}) => {
+const Button: React.FC<ButtonProps> = (props) => {
+
+  const {
+    type = 'default',
+    size,
+    href,
+    loading,
+    icon,
+    children,
+    ...rest
+  } = props;
+
 
   const className = cn('sp-btn', {
     [`sp-btn-${type}`]: type,
     [`sp-btn-${size}`]: size,
-    'disabled': (type === 'link') && disabled
+    'sp-btn-disabled': props.disabled
   })
 
   
   const iconBox = () => {
     if (icon) {
-
       return React.cloneElement(icon, {
         className: 'sp-btn-icon',
         size: 16
@@ -58,17 +59,11 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={className}
-      disabled={disabled}
       {...rest}
     >
       {content()}
     </button>
   )
-}
-
-Button.defaultProps = {
-  disabled: false,
-  type: 'default'
 }
 
 export default Button

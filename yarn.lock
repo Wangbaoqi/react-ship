@@ -5980,17 +5980,6 @@ dumi-theme-default@1.1.21:
     rc-tabs "^11.7.1"
     rc-tree "^5.2.0"
 
-dumi-theme-mobile@^1.1.22:
-  version "1.1.22"
-  resolved "https://registry.yarnpkg.com/dumi-theme-mobile/-/dumi-theme-mobile-1.1.22.tgz#e1412ea30217041d4ff59f6b66958278015516c9"
-  integrity sha512-Z9886E5Xt4bdJXEOUZPtAYFB0stqkPOzSjwiESfeAkfKR/XvALbb3HgE9grjJstpIkM5O0Q7CCmuAajg2njdCA==
-  dependencies:
-    dumi-theme-default "1.1.21"
-    f2-touchemulator "^0.0.1"
-    lodash.debounce "^4.0.8"
-    qrcode.react "^1.0.0"
-    umi-hd "^5.0.1"
-
 dumi@^1.1.0:
   version "1.1.42"
   resolved "https://registry.yarnpkg.com/dumi/-/dumi-1.1.42.tgz#e5b205ac2fc9657f6d7bb2330349c02f7785a13a"
@@ -12473,7 +12462,7 @@ q@^1.1.2, q@^1.5.1:
 qr.js@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/qr.js/-/qr.js-0.0.0.tgz#cace86386f59a0db8050fa90d9b6b0e88a1e364f"
-  integrity sha1-ys6GOG9ZoNuAUPqQ2baw6IoeNk8=
+  integrity sha512-c4iYnWb+k2E+vYpRimHqSu575b1/wKl4XFeJGpFmrJQz5I88v9aY2czh7s0w36srfCM1sXgC/xpoJz5dJfq+OQ==
 
 qrcode.react@^1.0.0:
   version "1.0.1"
