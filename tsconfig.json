@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
@@ -8,6 +9,10 @@
     "types": ["jest"],
     "strict": true,
     "skipLibCheck": true,
-    "declaration": true
+    "declaration": true,
+    "typeRoots": ["src/typings", "node_modules/@types"],
+    "paths": {
+      "react-ship": ["src/index.ts"]
+    }
   }
 }

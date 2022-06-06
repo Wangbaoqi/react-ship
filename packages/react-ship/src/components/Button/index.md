@@ -24,7 +24,6 @@ import { Button } from 'react-ship';
 
 按钮支持 `default` 、 `primary` 、 `info` 、 `warning` 、 `danger`，`text` 和 `link` 等类型，默认为 `default` 。
 
-
 <code src="./demo/type.tsx"></code>
 
 ### 禁用按钮
@@ -44,6 +43,12 @@ import { Button } from 'react-ship';
 图标按钮通过`icon`属性来设置，这里`icon`支持[react-feature](https://github.com/feathericons/react-feather)里的所有图标
 
 <code src="./demo/icon.tsx"></code>
+
+### 形状按钮
+
+图标按钮通过`shape`属性来设置，默认是有圆角，如果设置了`shape`，则无圆角。
+
+<code src="./demo/shape.tsx"></code>
 
 ## API
 

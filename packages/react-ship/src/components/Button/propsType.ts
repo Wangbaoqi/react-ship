@@ -1,17 +1,86 @@
 
 
-export type ButtonSize = 'lg' | 'sm' | 'xs' | 'base';
-export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'info' | 'warning';
+export type ButtonSize = 'lg' | 'sm' | 'xs' | 'base' | 'normal';
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'info' | 'warning' | 'text';
 export type ButtonHTMLTypes = 'submit' | 'button' | 'reset';
 export interface BaseButtonProps {
-  /** className 自定义类名 */
+  /**
+   * 自定义类名
+   * @description       自定义类名 dd
+   * @description.en-US customs className
+   * @default           null
+   */
   className?: string,
+  /**
+   * 禁用按钮
+   * @description       禁用按钮
+   * @description.en-US disable button
+   * @default           false
+   */
   disabled?: boolean,
-  size?: ButtonSize,
-  href?: string,
+  /**
+   * 弱按钮
+   * @description       弱按钮
+   * @description.en-US outline button
+   * @default           false
+   */
+  outline?: boolean,
+  /**
+   * loading button 
+   * @description       loading button
+   * @description.en-US outline button
+   * @default           false
+   */
   loading?: boolean,
+  /**
+   * block 按钮
+   * @description       block button
+   * @description.en-US block button
+   * @default           false
+   */
+  block?: boolean,
+  /**
+   * block 按钮
+   * @description       block button
+   * @description.en-US block button
+   * @default           false
+   */
+  shape?: boolean,
+  /**
+   * size button
+   * @description       size button
+   * @description.en-US size button
+   * @default           normal
+   */
+  size?: ButtonSize,
+  /**
+   * link button
+   * @description       link button
+   * @description.en-US link button
+   * @default           false
+   */
+  href?: string,
+  /**
+   * icon button
+   * @description       icon button
+   * @description.en-US icon button
+   * @default           null
+   */
   icon?: React.ReactElement,
+  /**
+   * button type
+   * @description       button type
+   * @description.en-US button type
+   * @Other           type=default
+   */
   type?: ButtonType,
+
+  /**
+   * 自定义类名
+   * @description       自定义类名
+   * @description.en-US customs className
+   * @Other           支持定义默认值
+   */
   children?: React.ReactNode,
 }
 

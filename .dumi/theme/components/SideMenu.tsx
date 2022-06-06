@@ -68,7 +68,7 @@ const SideMenu: FC<INavbarProps> = ({ mobileMenuCollapsed, location, darkPrefix 
                 const child = Boolean(nav.children?.length) && (
                   <ul>
                     {nav.children.map(item => (
-                      <li key={item.path || item.title}>
+                      <li className='sp-menu-title' key={item.path || item.title}>
                         <NavLink to={item.path}>{item.title}</NavLink>
                       </li>
                     ))}
@@ -109,12 +109,13 @@ const SideMenu: FC<INavbarProps> = ({ mobileMenuCollapsed, location, darkPrefix 
 
               return (
                 <li key={item.path || item.title}>
-                  <NavLink
+                  <span className='sp-menu-title'>{item.title}</span>
+                  {/* <NavLink
                     to={item.path}
                     isActive={() => menuPaths.includes(location.pathname)}
                   >
-                    {item.title}
-                  </NavLink>
+                    
+                  </NavLink> */}
                   {/* group children */}
                   {Boolean(item.children && item.children.length) && (
                     <ul>
@@ -123,19 +124,10 @@ const SideMenu: FC<INavbarProps> = ({ mobileMenuCollapsed, location, darkPrefix 
                           <NavLink to={child.path} exact>
                             <span>{child.title}</span>
                           </NavLink>
-                          {/* group children slugs */}
-                          {/* {Boolean(
-                            meta.toc === 'menu' &&
-                            typeof window !== 'undefined' &&
-                            child.path === location.pathname &&
-                            hasSlugs,
-                          ) && <SlugList slugs={meta.slugs} />} */}
                         </li>
                       ))}
                     </ul>
                   )}
-                  {/* group slugs */}
-                  {/* {show1LevelSlugs && <SlugList slugs={meta.slugs} />} */}
                 </li>
               );
             })}

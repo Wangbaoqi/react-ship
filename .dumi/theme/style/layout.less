@@ -76,6 +76,9 @@ body {
       font-size: 13px;
       box-sizing: border-box;
       padding: 20px 1px 20px 0;
+      @media @mobile {
+        display: none;
+      }
     }
   }
 
@@ -338,7 +341,7 @@ body {
 
   &-footer-meta {
     margin-top: 40px;
-    padding-top: 24px;
+    padding: 24px 50px;
     display: flex;
     color: @c-secondary;
     font-size: 14px;

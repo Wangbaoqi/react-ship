@@ -20,38 +20,43 @@ const LOCALE_TEXTS = {
 };
 
 export default ({ identifier, export: expt }: IApiComponentProps) => {
+  
   const data = useApiData(identifier);
+  console.log(identifier, expt, data, 'table');
+
   const { locale } = useContext(context);
   const texts = /^zh|cn$/i.test(locale) ? LOCALE_TEXTS['zh-CN'] : LOCALE_TEXTS['en-US'];
 
   return (
-    <>
-      {data && (
-        <table style={{ marginTop: 24 }}>
-          <thead>
-            <tr>
-              <th>{texts.name}</th>
-              <th>{texts.description}</th>
-              <th>{texts.type}</th>
-              <th>{texts.default}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data[expt].map(row => (
-              <tr key={row.identifier}>
-                <td>{row.identifier}</td>
-                <td>{row.description || '--'}</td>
-                <td>
-                  <code>{row.type}</code>
-                </td>
-                <td>
-                  <code>{row.default || (row.required && texts.required) || '--'}</code>
-                </td>
+    <div className='sp-table'>
+      <div className='sp-table-content'>
+        {data && (
+          <table style={{ marginTop: 24, overflow: 'auto' }}>
+            <thead>
+              <tr>
+                <th>{texts.name}</th>
+                <th>{texts.description}</th>
+                <th>{texts.type}</th>
+                <th>{texts.default}</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </>
+            </thead>
+            <tbody>
+              {data[expt].map(row => (
+                <tr key={row.identifier}>
+                  <td>{row.identifier}</td>
+                  <td>{row.description || '--'}</td>
+                  <td>
+                    <code>{row.type}</code>
+                  </td>
+                  <td>
+                    <code>{row.default || (row.required && texts.required) || '--'}</code>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+    </div>
   );
 };

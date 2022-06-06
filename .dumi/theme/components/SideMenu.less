@@ -50,6 +50,7 @@
     }
   }
 
+  
   &-header {
     position: relative;
     padding-top: 40px;
@@ -113,6 +114,18 @@
     }
   }
 
+  &-title {
+    font-weight: @s-menu-weight;
+    padding: .5rem 1rem;
+    color: @c-heading;
+    line-height: 2.4;
+    outline: none;
+    transition: color 0.3s, background 0.3s;
+    [data-prefers-color=dark] & {
+      color: @c-heading-dark;
+    }
+   
+  }
   &-inner {
     width: 100%;
     height: 100%;
@@ -132,54 +145,16 @@
 
       li {
         color: @c-text;
+        margin: .5rem 0;
         a,
-        > span {
-          position: relative;
+        span {
           display: block;
-          padding-right: 24px;
-          color: @c-heading;
-          line-height: 2.4;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
           text-decoration: none;
-          outline: none;
-          transition: color 0.3s, background 0.3s;
 
-          [data-prefers-color=dark] & {
-            color: @c-heading-dark;
-          }
-
-          span {
-            display: block;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
-
-          &:hover,
-          &.active {
-            color: @c-primary;
-
-            [data-prefers-color=dark] & {
-              color: @c-primary-dark;
-            }
-          }
-
-          // &::before {
-          //   content: '';
-          //   position: absolute;
-          //   top: 50%;
-          //   left: -10px;
-          //   margin-top: -2.5px;
-          //   display: inline-block;
-          //   width: 5px;
-          //   height: 5px;
-          //   background-color: @c-primary;
-          //   border-radius: 50%;
-          //   opacity: 0;
-          //   transition: transform 0.2s, opacity 0.2s;
-          //   transform: scale(0) translateX(-10px);
-          // }
         }
-
         &.active a,
         a.active {
           &::before {
@@ -191,7 +166,7 @@
         // level larger, offset larger, font size smaller
         ul {
           font-size: 0.9em;
-          padding-left: 1em;
+          padding-left: 1rem;
         }
       }
     }

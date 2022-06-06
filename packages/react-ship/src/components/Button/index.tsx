@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 
 import { ButtonProps } from './propsType';
@@ -9,19 +9,32 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   const {
     type = 'default',
+    className,
+    block,
+    shape,
     size,
     href,
     loading,
+    outline,
     icon,
     children,
     ...rest
   } = props;
 
+  const is_outline = useMemo(() => outline ?? false, [outline]);
+  const is_block = useMemo(() => block ?? false, [block]);
+  const is_shape = useMemo(() => shape ?? false, [shape]);
+  const disabled = useMemo(() => props.disabled ?? false, [props.disabled]);
 
-  const className = cn('sp-btn', {
+  // console.log(outline, 'outline');
+  
+  const cls = cn(className, 'sp-btn', {
     [`sp-btn-${type}`]: type,
     [`sp-btn-${size}`]: size,
-    'sp-btn-disabled': props.disabled
+    'sp-btn-disabled': disabled,
+    'sp-btn-outline': is_outline,
+    'sp-btn-block': is_block,
+    'sp-btn-shape': is_shape,
   })
 
   
@@ -54,11 +67,9 @@ const Button: React.FC<ButtonProps> = (props) => {
   }
 
 
-
-
   return (
     <button
-      className={className}
+      className={cls}
       {...rest}
     >
       {content()}
