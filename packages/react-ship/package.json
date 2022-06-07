@@ -1,6 +1,6 @@
 {
   "name": "react-mobile-ship",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "> react mobile ui components co description",
   "author": "Wangbaoqi <wangbaoqi8839@gmail.com>",
   "homepage": "https://react-ship.wangbaoqi.tech/",
@@ -22,9 +22,6 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "react-feather": "^2.0.10"
-  },
-  "devDependencies": {
-    
   },
   "peerDependencies": {
     "react": ">=16.9.0"
