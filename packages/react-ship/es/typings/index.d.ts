@@ -1,1 +1,1 @@
-declare module 'react-ship';
+declare module 'react-mobile-ship';
