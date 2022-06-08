@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-ship';
+import { Button } from 'react-mobile-ship';
 import "./type.css";
 export default (function () {
   return /*#__PURE__*/React.createElement("div", {

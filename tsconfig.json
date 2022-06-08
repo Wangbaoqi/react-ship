@@ -12,7 +12,7 @@
     "declaration": true,
     "typeRoots": ["src/typings", "node_modules/@types"],
     "paths": {
-      "react-ship": ["src/index.ts"]
+      "react-mobile-ship": ["src/index.ts"]
     }
   }
 }

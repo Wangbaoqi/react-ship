@@ -11,17 +11,17 @@ export default defineConfig({
   navs: {
     'en-US': [
       null,
-      { title: 'GitHub', path: 'https://github.com/umijs/dumi' },
-      { title: 'Changelog', path: 'https://github.com/umijs/dumi/releases' },
+      { title: 'GitHub', path: 'https://github.com/Wangbaoqi/react-ship' },
+      { title: 'Changelog', path: 'https://github.com/Wangbaoqi/react-ship/releases' },
     ],
     'zh-CN': [
       null,
-      { title: 'GitHub', path: 'https://github.com/umijs/dumi' },
-      { title: '更新日志', path: 'https://github.com/umijs/dumi/releases' },
+      { title: 'GitHub', path: 'https://github.com/Wangbaoqi/react-ship' },
+      { title: '更新日志', path: 'https://github.com/Wangbaoqi/react-ship/releases' },
     ],
   },
   themeConfig: {
-    carrier: 'react-ship', // 设备状态栏左侧的文本内容
+    carrier: 'react-mobile-ship', // 设备状态栏左侧的文本内容
     hd: {
       // umi-hd 的 750 高清方案（默认值）
       // 根据不同的设备屏幕宽度断点切换高清方案

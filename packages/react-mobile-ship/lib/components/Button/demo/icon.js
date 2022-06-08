@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactShip = require("react-ship");
+var _reactMobileShip = require("react-mobile-ship");
 
 var _reactFeather = require("react-feather");
 
@@ -20,13 +20,13 @@ var _default = function _default() {
     className: 'btn-box'
   }, /*#__PURE__*/_react.default.createElement("p", null, "\u56FE\u6807\u6309\u94AE"), /*#__PURE__*/_react.default.createElement("div", {
     className: 'type-box'
-  }, /*#__PURE__*/_react.default.createElement(_reactShip.Button, {
+  }, /*#__PURE__*/_react.default.createElement(_reactMobileShip.Button, {
     icon: /*#__PURE__*/_react.default.createElement(_reactFeather.Bell, null),
     type: 'primary'
-  }, "\u6309\u94C3"), /*#__PURE__*/_react.default.createElement(_reactShip.Button, {
+  }, "\u6309\u94C3"), /*#__PURE__*/_react.default.createElement(_reactMobileShip.Button, {
     icon: /*#__PURE__*/_react.default.createElement(_reactFeather.Bookmark, null),
     type: 'info'
-  }, "\u4E66\u7B7E"), /*#__PURE__*/_react.default.createElement(_reactShip.Button, {
+  }, "\u4E66\u7B7E"), /*#__PURE__*/_react.default.createElement(_reactMobileShip.Button, {
     icon: /*#__PURE__*/_react.default.createElement(_reactFeather.AlertCircle, null),
     type: 'warning',
     outline: true

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-ship';
+import { Button } from 'react-mobile-ship';
 import { Bell, Bookmark, AlertCircle } from 'react-feather';
 import "./type.css";
 export default (function () {

@@ -14,7 +14,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Button } from 'react-ship';
+import { Button } from 'react-mobile-ship';
 
 export default () => <Button >First Demo</Button>;
 ```

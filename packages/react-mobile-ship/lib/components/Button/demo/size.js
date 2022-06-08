@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactShip = require("react-ship");
+var _reactMobileShip = require("react-mobile-ship");
 
 require("./type.css");
 
@@ -18,19 +18,19 @@ var _default = function _default() {
     className: 'btn-box'
   }, /*#__PURE__*/_react.default.createElement("p", null, "\u6309\u94AE\u5C3A\u5BF8"), /*#__PURE__*/_react.default.createElement("div", {
     className: 'type-box'
-  }, /*#__PURE__*/_react.default.createElement(_reactShip.Button, {
+  }, /*#__PURE__*/_react.default.createElement(_reactMobileShip.Button, {
     size: 'lg'
-  }, "\u5927\u53F7\u6309\u94AE"), /*#__PURE__*/_react.default.createElement(_reactShip.Button, {
+  }, "\u5927\u53F7\u6309\u94AE"), /*#__PURE__*/_react.default.createElement(_reactMobileShip.Button, {
     size: 'normal'
-  }, "\u666E\u901A\u6309\u94AE"), /*#__PURE__*/_react.default.createElement(_reactShip.Button, {
+  }, "\u666E\u901A\u6309\u94AE"), /*#__PURE__*/_react.default.createElement(_reactMobileShip.Button, {
     size: 'sm'
-  }, "\u5C0F\u53F7\u6309\u94AE"), /*#__PURE__*/_react.default.createElement(_reactShip.Button, {
+  }, "\u5C0F\u53F7\u6309\u94AE"), /*#__PURE__*/_react.default.createElement(_reactMobileShip.Button, {
     size: 'normal',
     outline: true
-  }, "\u666E\u901A\u6309\u94AE"), /*#__PURE__*/_react.default.createElement(_reactShip.Button, {
+  }, "\u666E\u901A\u6309\u94AE"), /*#__PURE__*/_react.default.createElement(_reactMobileShip.Button, {
     block: true,
     className: 'custom-size'
-  }, "\u81EA\u5B9A\u4E49\u6309\u94AE\u5C3A\u5BF8"), /*#__PURE__*/_react.default.createElement(_reactShip.Button, {
+  }, "\u81EA\u5B9A\u4E49\u6309\u94AE\u5C3A\u5BF8"), /*#__PURE__*/_react.default.createElement(_reactMobileShip.Button, {
     block: true,
     outline: true,
     className: 'custom-size'

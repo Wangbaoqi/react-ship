@@ -2,6 +2,6 @@
 
 const reactShip = require('..');
 
-describe('react-ship', () => {
+describe('react-mobile-ship', () => {
     it('needs tests');
 });
