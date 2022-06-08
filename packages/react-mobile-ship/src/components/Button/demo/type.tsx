@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-ship';
+import { Button } from 'react-mobile-ship';
 
 import './type.less';
 

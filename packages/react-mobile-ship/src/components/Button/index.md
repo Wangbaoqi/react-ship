@@ -15,7 +15,7 @@ group:
 ## 使用
 
 ```js
-import { Button } from 'react-ship';
+import { Button } from 'react-mobile-ship';
 ```
 
 ## 代码演示
