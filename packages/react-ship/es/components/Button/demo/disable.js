@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-ship';
-import './type.less';
+import "./type.css";
 export default (function () {
   return /*#__PURE__*/React.createElement("div", {
     className: 'btn-box'

@@ -1,0 +1,21 @@
+.btn-box {
+  padding: 10px;
+}
+.type-box {
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.type-box .custom {
+  border-radius: 10px;
+}
+.type-box .sp-btn {
+  margin-bottom: 20px;
+}
+.type-box .custom-outline {
+  color: #333;
+  border-color: #444;
+  background-color: transparent;
+}
+.type-box .custom-size {
+  width: 140px;
+}
