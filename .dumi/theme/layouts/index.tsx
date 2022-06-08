@@ -14,14 +14,21 @@ const Hero = hero => (
   <>
     <div className="sp-layout-hero">
       {hero.image && <img src={hero.image} />}
-      <h1>{hero.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: hero.desc }} />
-      {hero.actions &&
-        hero.actions.map(action => (
-          <Link to={action.link} key={action.text}>
-            <button type="button">{action.text}</button>
-          </Link>
-        ))}
+      <div className='sp-layout-hero-left'>
+        <div>
+          <h1>{hero.title}</h1>
+          <p dangerouslySetInnerHTML={{ __html: hero.desc }} />
+          {hero.actions &&
+            hero.actions.map(action => (
+              <Link to={action.link} key={action.text}>
+                <button type="button">{action.text}</button>
+              </Link>
+            ))}
+        </div>
+      </div>
+      <div className='sp-layout-hero-right'>
+        
+      </div>
     </div>
   </>
 );
@@ -42,6 +49,7 @@ const Features = features => (
     ))}
   </div>
 );
+
 
 const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
   const {
@@ -71,6 +79,8 @@ const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
       (repoUrl || '').match(/(github|gitlab)/)?.[1] || 'nothing'
     ] || platform;
 
+  console.log(showHero, 'ssss');
+  
   return (
     <div
       className="sp-layout"
@@ -115,25 +125,28 @@ const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
       />
       {showHero && Hero(meta.hero)}
       {showFeatures && Features(meta.features)}
-      <div className="sp-layout-content">
-        {children}
-        {!showHero && !showFeatures && meta.filePath && !meta.gapless && (
-          <div className="sp-layout-footer-meta">
-            {repoPlatform && (
-              <Link to={`${repoUrl}/edit/${branch}/${meta.filePath}`}>
-                {isCN ? `在 ${repoPlatform} 上编辑此页` : `Edit this doc on ${repoPlatform}`}
-              </Link>
+      {
+        showHero ? '' :
+          <div className="sp-layout-content">
+            { children }
+            {!showHero && !showFeatures && meta.filePath && !meta.gapless && (
+              <div className="sp-layout-footer-meta">
+                {repoPlatform && (
+                  <Link to={`${repoUrl}/edit/${branch}/${meta.filePath}`}>
+                    {isCN ? `在 ${repoPlatform} 上编辑此页` : `Edit this doc on ${repoPlatform}`}
+                  </Link>
+                )}
+                <span data-updated-text={isCN ? '最后更新时间：' : 'Last update: '}>{updatedTime}</span>
+              </div>
             )}
-            <span data-updated-text={isCN ? '最后更新时间：' : 'Last update: '}>{updatedTime}</span>
+            {(showHero || showFeatures) && meta.footer && (
+              <div
+                className="sp-layout-footer"
+                dangerouslySetInnerHTML={{ __html: meta.footer }}
+              />
+            )}
           </div>
-        )}
-        {(showHero || showFeatures) && meta.footer && (
-          <div
-            className="sp-layout-footer"
-            dangerouslySetInnerHTML={{ __html: meta.footer }}
-          />
-        )}
-      </div>
+      }
     </div>
   );
 };

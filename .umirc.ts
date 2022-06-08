@@ -1,13 +1,11 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'react-ship',
-  description: 'react-ship ',
-  favicon:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
-  logo: 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+  title: 'react-mobile-ship',
+  description: 'react-mobile-ship',
+  favicon: '/images/logo.png',
+  logo: '/images/logo.png',
   outputPath: 'dist',
-  // base: 'react-ship',
   mode: 'site',
   locales: [['zh-CN', '中文'], ['en-US', 'English']],
   navs: {

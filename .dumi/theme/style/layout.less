@@ -21,7 +21,7 @@ body {
 .@{prefix}-layout {
   box-sizing: border-box;
   min-height: 100vh;
-  padding: 16px 0 50px 0;
+  // padding: 16px 0 50px 0;
 
   @media @mobile {
     padding-top: 66px !important;
@@ -83,13 +83,31 @@ body {
   }
 
   &-hero {
-    margin: -50px -58px 0;
-    padding: 100px 0;
+    // margin: -50px -58px 0;
+    // padding: 100px 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
     text-align: center;
-    background-color: #f5f6f8;
 
     [data-prefers-color=dark] & {
       background-color: @c-light-bg-dark;
+    }
+
+    &-left,
+    &-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+    } 
+
+    &-left {
+      align-self: center;
+    }
+    &-right {
+      background-color: #f5f6f8;
     }
 
     @media @mobile {
