@@ -2,7 +2,6 @@ import React from 'react';
 import type { Language } from 'prism-react-renderer';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import { useCopy } from 'dumi/theme';
-import codeTheme from '../config/codeTheme'
 import 'prismjs/themes/prism.css';
 import './SourceCode.less';
 
@@ -29,7 +28,7 @@ export default ({ code, lang, showCopy = true }: ICodeBlockProps) => {
         {...defaultProps}
         code={code}
         language={SIMILAR_DSL[lang] || lang}
-        theme={codeTheme}
+        theme={undefined}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>

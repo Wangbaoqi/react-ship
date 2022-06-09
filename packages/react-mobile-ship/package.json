@@ -5,7 +5,7 @@
   "author": "Wangbaoqi <wangbaoqi8839@gmail.com>",
   "homepage": "https://react-ship.wangbaoqi.tech/",
   "license": "ISC",
-  "main": "lib/react-ship.js",
+  "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
   "directories": {

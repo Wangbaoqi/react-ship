@@ -56,13 +56,23 @@ const Dark: FC<darkProps> = ({ darkSwitch, onDarkSwitchClick, isSideMenu }) => {
     <div className="sp-dark">
       <div
         className={`sp-dark-switch ${!isSideMenu && darkSwitch ? "sp-dark-switch-open" : ""}`}>
-        {isSideMenu ? (
+        
+        {
+          color == 'dark' ?
+            <button key="dumi-dark-btn-moon" title="Dark theme" onClick={ev => changeColor(ev, 'light')} className={`sp-dark-moon ${prefersColor === prefersColor ? 'sp-dark-switch-active' : ''}`}>
+              {moonSvg}
+            </button> : 
+            <button key="dumi-dark-btn-sun" title="Light theme" onClick={ev => changeColor(ev, 'dark')} className={`sp-dark-sun ${prefersColor === prefersColor ? 'sp-dark-switch-active' : ''}`}>
+              {sunSvg}
+            </button>
+        }
+        {/* {isSideMenu ? (
           allState.map(item => (
             getSvg(item)
           ))
-        ) : getSvg(prefersColor)}
+        ) : getSvg(prefersColor)} */}
       </div>
-      {!isSideMenu && darkSwitch && (
+      {/* {!isSideMenu && darkSwitch && (
         <div className="sp-dark-switch-list">
           {
             list.map(item => (
@@ -70,7 +80,7 @@ const Dark: FC<darkProps> = ({ darkSwitch, onDarkSwitchClick, isSideMenu }) => {
             ))
           }
         </div>
-      )}
+      )} */}
     </div>
   )
 };
