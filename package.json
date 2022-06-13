@@ -18,9 +18,6 @@
   },
   "module": "es/index.js",
   "typings": "es/index.d.ts",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
       "prettier --write"
@@ -30,11 +27,11 @@
     ]
   },
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "f2-touchemulator": "^0.0.1",
     "lodash.debounce": "^4.0.8",
     "qrcode.react": "^1.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "umi-hd": "^5.0.1"
   },
   "devDependencies": {
@@ -46,6 +43,7 @@
     "dumi": "^1.1.0",
     "father-build": "^1.17.2",
     "gh-pages": "^3.0.0",
+    "husky": "^8.0.1",
     "lerna": "^5.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
