@@ -9,6 +9,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   const {
     type = 'default',
+    htmlType = 'button',
     className,
     block,
     shape,
@@ -18,6 +19,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     outline,
     icon,
     children,
+    onClick,
     ...rest
   } = props;
 
@@ -26,8 +28,6 @@ const Button: React.FC<ButtonProps> = (props) => {
   const is_shape = useMemo(() => shape ?? false, [shape]);
   const disabled = useMemo(() => props.disabled ?? false, [props.disabled]);
 
-  // console.log(outline, 'outline');
-  
   const cls = cn(className, 'sp-btn', {
     [`sp-btn-${type}`]: type,
     [`sp-btn-${size}`]: size,
@@ -69,7 +69,9 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   return (
     <button
+      type={htmlType}
       className={cls}
+      onClick={onClick}
       {...rest}
     >
       {content()}

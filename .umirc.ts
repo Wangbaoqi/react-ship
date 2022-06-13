@@ -13,11 +13,13 @@ export default defineConfig({
       null,
       { title: 'GitHub', path: 'https://github.com/Wangbaoqi/react-ship' },
       { title: 'Changelog', path: 'https://github.com/Wangbaoqi/react-ship/releases' },
+      { title: 'blog', path: 'https://www.wangbaoqi.tech/' },
     ],
     'zh-CN': [
       null,
       { title: 'GitHub', path: 'https://github.com/Wangbaoqi/react-ship' },
       { title: '更新日志', path: 'https://github.com/Wangbaoqi/react-ship/releases' },
+      { title: 'blog', path: 'https://www.wangbaoqi.tech/' },
     ],
   },
   themeConfig: {

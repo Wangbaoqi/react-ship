@@ -116,7 +116,7 @@
 
   &-title {
     font-weight: @s-menu-weight;
-    padding: .5rem 1rem;
+    padding: 0 1rem;
     color: @c-heading;
     line-height: 2.4;
     outline: none;
@@ -131,18 +131,17 @@
     height: 100%;
     overflow: auto;
     overscroll-behavior: contain;
-    padding: 0 10px;
 
     // common list styles
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 16px;
+      font-size: 15px;
 
       li {
         color: @c-text;
-        margin: .5rem 0;
+        margin: 0.5rem 0;
         a,
         span {
           display: block;
@@ -150,7 +149,8 @@
           white-space: nowrap;
           text-overflow: ellipsis;
           text-decoration: none;
-
+          line-height: 2.4;
+          font-weight: @s-menu-weight;
         }
         &.active a,
         a.active {
@@ -173,7 +173,6 @@
       > li > a {
 
         &:not([href]) {
-          padding-top: 24px;
           line-height: 1;
           font-weight: 500;
           color: @c-heading !important;
@@ -251,19 +250,17 @@
       > li > a {
         @c-active-bg: #e8ecf4;
 
-        padding-left: 28px;
-
         &.active {
-          background: linear-gradient(to left, #e8ecf4, rgba(232, 236, 244, 0));
+          // background: linear-gradient(to left, #e8ecf4, rgba(232, 236, 244, 0));
 
           [data-prefers-color=dark] & {
-            background: linear-gradient(to left, #3d3d3e, rgba(255, 255, 255, 0.06));
+            // background: linear-gradient(to left, #3d3d3e, rgba(255, 255, 255, 0.06));
           }
         }
 
         ~ ul {
-          margin-top: 8px;
-          margin-left: 28px;
+          margin: 1rem 0;
+          // margin-left: 28px;
         }
 
         @media @mobile {
@@ -288,7 +285,7 @@
     }
 
     .@{prefix}-menu-list {
-      padding: 0;
+      padding: 0 10px;
 
       > li > a {
         position: relative;
@@ -310,10 +307,11 @@
 
         &.active {
           z-index: 1;
-          background: linear-gradient(to left, #f8faff, rgba(248, 250, 255, 0));
+          background: @c-bg-hover;
+          border-radius: 6px;
 
           [data-prefers-color=dark] & {
-            background: linear-gradient(to left, #3d3d3e, rgba(255, 255, 255, 0.06));
+            background: @c-bg-dark-hover;
           }
           &::after {
             opacity: 1;

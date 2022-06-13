@@ -1,6 +1,6 @@
 ---
-title: 介绍
-order: 1
+title: 快速开始
+order: 2
 toc: menu
 nav:
   title: 指南

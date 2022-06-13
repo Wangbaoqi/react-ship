@@ -50,4 +50,11 @@ import { Button } from 'react-mobile-ship';
 
 <code src="./demo/shape.tsx"></code>
 
+### 块级按钮
+
+块级按钮通过`block`属性来设置，默认是内联，如果设置了`block`，则是单独的一行。
+
+<code src="./demo/shape.tsx"></code>
+
+
 <API></API>

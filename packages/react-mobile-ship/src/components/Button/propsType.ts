@@ -1,3 +1,4 @@
+import { React, MouseEvent } from 'react';
 
 
 export type ButtonSize = 'lg' | 'sm' | 'base' | 'normal';
@@ -81,6 +82,13 @@ export interface BaseButtonProps {
    * @default           支持定义默认值
    */
   children?: React.ReactNode,
+  /**
+   * click event
+   * @description       点击事件
+   * @description.en-US children 
+   * @default           
+   */
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 

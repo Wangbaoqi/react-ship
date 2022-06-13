@@ -53,8 +53,9 @@ const SideMenu: FC<INavbarProps> = ({ mobileMenuCollapsed, location, darkPrefix 
             <p>
               <object
                 type="image/svg+xml"
-                data={`https://img.shields.io/github/stars${repoUrl.match(/((\/[^\/]+){2})$/)[1]
-                  }?style=social`}
+                data={`https://img.shields.io/github/stars${
+                  repoUrl.match(/((\/[^\/]+){2})$/)[1]
+                }?style=social`}
               />
             </p>
           )}
@@ -64,11 +65,11 @@ const SideMenu: FC<INavbarProps> = ({ mobileMenuCollapsed, location, darkPrefix 
         <div className="sp-menu-mobile-area">
           {!!navItems.length && (
             <ul className="sp-menu-nav-list">
-              {navItems.map(nav => {
+              {navItems.map((nav) => {
                 const child = Boolean(nav.children?.length) && (
                   <ul>
-                    {nav.children.map(item => (
-                      <li className='sp-menu-title' key={item.path || item.title}>
+                    {nav.children.map((item) => (
+                      <li className="sp-menu-title" key={item.path || item.title}>
                         <NavLink to={item.path}>{item.title}</NavLink>
                       </li>
                     ))}
@@ -91,14 +92,17 @@ const SideMenu: FC<INavbarProps> = ({ mobileMenuCollapsed, location, darkPrefix 
         {/* menu list */}
         <ul className="sp-menu-list">
           {!isHiddenMenus &&
-            menu.map(item => {
+            menu.map((item) => {
               // always use meta from routes to reduce menu data size
               const hasSlugs = Boolean(meta.slugs?.length);
               const hasChildren = item.children && Boolean(item.children.length);
               const show1LevelSlugs =
-                meta.toc === 'menu' && !hasChildren && hasSlugs && item.path === location.pathname.replace(/([^^])\/$/, '$1');
+                meta.toc === 'menu' &&
+                !hasChildren &&
+                hasSlugs &&
+                item.path === location.pathname.replace(/([^^])\/$/, '$1');
               const menuPaths = hasChildren
-                ? item.children.map(i => i.path)
+                ? item.children.map((i) => i.path)
                 : [
                     item.path,
                     // handle menu group which has no index route and no valid children
@@ -107,19 +111,21 @@ const SideMenu: FC<INavbarProps> = ({ mobileMenuCollapsed, location, darkPrefix 
                       : null,
                   ];
 
+              const isChild = Boolean(item.children && item.children.length);
+
               return (
                 <li key={item.path || item.title}>
-                  <span className='sp-menu-title'>{item.title}</span>
-                  {/* <NavLink
-                    to={item.path}
-                    isActive={() => menuPaths.includes(location.pathname)}
-                  >
-                    
-                  </NavLink> */}
+                  {isChild ? (
+                    <span className="sp-menu-title">{item.title}</span>
+                  ) : (
+                    <NavLink to={item.path} isActive={() => menuPaths.includes(location.pathname)}>
+                      <span className="sp-menu-title">{item.title}</span>
+                    </NavLink>
+                  )}
                   {/* group children */}
                   {Boolean(item.children && item.children.length) && (
                     <ul>
-                      {item.children.map(child => (
+                      {item.children.map((child) => (
                         <li key={child.path}>
                           <NavLink to={child.path} exact>
                             <span>{child.title}</span>
