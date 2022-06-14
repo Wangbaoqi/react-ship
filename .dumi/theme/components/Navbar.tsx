@@ -23,7 +23,7 @@ const Navbar: FC<INavbarProps> = ({ onMobileMenuClick, navPrefix, location, dark
       {/* menu toogle button (only for mobile) */}
       <button className="sp-navbar-toggle" onClick={onMobileMenuClick} />
       {/* logo & title */}
-      <div className='sp-navbar-nav'>
+      <div className="sp-navbar-nav">
         <Link
           className="sp-navbar-logo"
           style={{
@@ -36,10 +36,10 @@ const Navbar: FC<INavbarProps> = ({ onMobileMenuClick, navPrefix, location, dark
         </Link>
         <nav>
           {/* nav */}
-          {navItems.map(nav => {
+          {navItems.map((nav) => {
             const child = Boolean(nav.children?.length) && (
               <ul>
-                {nav.children.map(item => (
+                {nav.children.map((item) => (
                   <li key={item.path}>
                     <NavLink to={item.path}>{item.title}</NavLink>
                   </li>

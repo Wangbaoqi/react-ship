@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import type { IApiComponentProps} from 'dumi/theme';
+import type { IApiComponentProps } from 'dumi/theme';
 import { context, useApiData, AnchorLink } from 'dumi/theme';
 
 const LOCALE_TEXTS = {
@@ -20,7 +20,6 @@ const LOCALE_TEXTS = {
 };
 
 export default ({ identifier, export: expt }: IApiComponentProps) => {
-  
   const data = useApiData(identifier);
   console.log(identifier, expt, data, 'table');
 
@@ -28,8 +27,8 @@ export default ({ identifier, export: expt }: IApiComponentProps) => {
   const texts = /^zh|cn$/i.test(locale) ? LOCALE_TEXTS['zh-CN'] : LOCALE_TEXTS['en-US'];
 
   return (
-    <div className='sp-table'>
-      <div className='sp-table-content'>
+    <div className="sp-table">
+      <div className="sp-table-content">
         {data && (
           <table style={{ marginTop: 24, overflow: 'auto' }}>
             <thead>
@@ -41,7 +40,7 @@ export default ({ identifier, export: expt }: IApiComponentProps) => {
               </tr>
             </thead>
             <tbody>
-              {data[expt].map(row => (
+              {data[expt].map((row) => (
                 <tr key={row.identifier}>
                   <td>{row.identifier}</td>
                   <td>{row.description || '--'}</td>

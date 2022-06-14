@@ -1,9 +1,8 @@
-
 .button-size(@p-x, @p-y, @f-s, @b-h, @b-w) {
+  width: @b-w;
+  height: @b-h;
   padding: @p-y @p-x;
   font-size: @f-s;
-  height: @b-h;
-  width: @b-w
 }
 
 .button-style(
@@ -23,8 +22,7 @@
     background: @hover-background;
     border-color: @hover-border;
   }
-  &:focus
-  &.focus {
+  &:focus &.focus {
     color: @hover-color;
     background: @hover-background;
     border-color: @hover-border;

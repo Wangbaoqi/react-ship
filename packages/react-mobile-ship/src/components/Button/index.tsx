@@ -1,12 +1,10 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
-
 import { ButtonProps } from './propsType';
 
 import './style/index.less';
 
 const Button: React.FC<ButtonProps> = (props) => {
-
   const {
     type = 'default',
     htmlType = 'button',
@@ -35,48 +33,43 @@ const Button: React.FC<ButtonProps> = (props) => {
     'sp-btn-outline': is_outline,
     'sp-btn-block': is_block,
     'sp-btn-shape': is_shape,
-  })
+  });
 
-  
   const iconBox = () => {
     if (icon) {
       return React.cloneElement(icon, {
         className: 'sp-btn-icon',
-        size: 16
-      })
+        size: 16,
+      });
     }
     return null;
-  }
+  };
 
   const textBox = () => {
-    return (
-      <span className=''>{children}</span>
-    )
-  }
+    return <span className="">{children}</span>;
+  };
 
   const content = () => {
     if (type === 'link' && href) {
-      return <a href={href} {...rest}>{ children }</a>
+      return (
+        <a href={href} {...rest}>
+          {children}
+        </a>
+      );
     }
     return (
-      <div className='sp-btn-content'>
+      <div className="sp-btn-content">
         {iconBox()}
         {textBox()}
       </div>
-    )
-  }
-
+    );
+  };
 
   return (
-    <button
-      type={htmlType}
-      className={cls}
-      onClick={onClick}
-      {...rest}
-    >
+    <button type={htmlType} className={cls} onClick={onClick} {...rest}>
       {content()}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

@@ -8,7 +8,7 @@ group:
   path: /components/basic
 ---
 
-## Button按钮
+## Button 按钮
 
 按钮用于开始一个即时操作。
 
@@ -55,6 +55,5 @@ import { Button } from 'react-mobile-ship';
 块级按钮通过`block`属性来设置，默认是内联，如果设置了`block`，则是单独的一行。
 
 <code src="./demo/shape.tsx"></code>
-
 
 <API></API>

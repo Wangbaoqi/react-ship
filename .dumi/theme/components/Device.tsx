@@ -57,21 +57,11 @@ const Device: FC<IDeviceProps> = ({ url, className }) => {
       </div>
       <iframe ref={iframeRef} title="dumi-previewer" src={iframeSrc} key={renderKey} />
       <div className="sp-device-action">
-        <button
-          className="sp-icon"
-          role="refresh"
-          onClick={() => setRenderKey(Math.random())}
-        />
+        <button className="sp-icon" role="refresh" onClick={() => setRenderKey(Math.random())} />
         <button className="sp-icon" role="qrcode">
           {url && <QRCode value={url} size={96} />}
         </button>
-        <a
-          href={url}
-          target="_blank"
-          rel="noreferrer"
-          className="sp-icon"
-          role="open-demo"
-        />
+        <a href={url} target="_blank" rel="noreferrer" className="sp-icon" role="open-demo" />
       </div>
     </div>
   );

@@ -7,7 +7,10 @@ export default defineConfig({
   logo: '/images/logo.png',
   outputPath: 'dist',
   mode: 'site',
-  locales: [['zh-CN', '中文'], ['en-US', 'English']],
+  locales: [
+    ['zh-CN', '中文'],
+    ['en-US', 'English'],
+  ],
   navs: {
     'en-US': [
       null,
@@ -28,7 +31,7 @@ export default defineConfig({
       // umi-hd 的 750 高清方案（默认值）
       // 根据不同的设备屏幕宽度断点切换高清方案
       rules: [],
-    }
+    },
   },
   apiParser: {
     // 自定义属性过滤配置，也可以是一个函数，用法参考：https://github.com/styleguidist/react-docgen-typescript/#propfilter
@@ -42,10 +45,10 @@ export default defineConfig({
     },
   },
   theme: {
-    '@sp-prefix': 'sp'
+    '@sp-prefix': 'sp',
   },
   cssLoader: {
     localsConvention: 'camelCase',
-  }
+  },
   // more config: https://d.umijs.org/config
 });

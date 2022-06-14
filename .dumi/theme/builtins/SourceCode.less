@@ -5,8 +5,7 @@
   font-size: 14px;
   background-color: @c-light-bg;
 
-  
-  [data-prefers-color=dark] & {
+  [data-prefers-color='dark'] & {
     color: @c-text-dark;
     background: #262626;
   }
@@ -18,8 +17,8 @@
 
   > pre[class*='language-'] {
     margin: 0;
-    background: transparent;
     text-shadow: none;
+    background: transparent;
 
     .token-line:not(:last-child) .plain:empty {
       display: inline-block;
@@ -54,9 +53,9 @@
     }
 
     &[data-status='copied'] {
+      background-position: -54px -16px;
       opacity: 1;
       pointer-events: none;
-      background-position: -54px -16px;
     }
   }
 
@@ -66,38 +65,58 @@
   }
 }
 
-code[class*="language-"], pre[class*="language-"] {
-  &::selection, & ::selection{
+code[class*='language-'],
+pre[class*='language-'] {
+  &::selection,
+  & ::selection {
     color: inherit;
   }
-  .token.property, .token.tag, .token.constant, .token.symbol, .token.deleted {
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
     color: #dfab5c;
   }
-  .token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
     color: #77b7d7;
   }
-  .token.atrule, .token.attr-value, .token.keyword {
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
     color: #977cdc;
   }
- 
+
   .token.keyword {
     color: hsl(195, 82%, 44%);
   }
-  .token.boolean, .token.number {
+  .token.boolean,
+  .token.number {
     color: #472c7b;
   }
 }
 
-[data-prefers-color=dark] {
-  code[class*="language-"], pre[class*="language-"] {
+[data-prefers-color='dark'] {
+  code[class*='language-'],
+  pre[class*='language-'] {
     color: @c-text-dark;
     text-shadow: 0 1px #000;
 
-    &::selection, & ::selection{
+    &::selection,
+    & ::selection {
       background-color: #364a63;
     }
   }
-  .token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
     background: transparent;
   }
   // .token.property, .token.tag, .token.constant, .token.symbol, .token.deleted {

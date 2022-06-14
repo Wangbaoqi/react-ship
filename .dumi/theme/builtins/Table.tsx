@@ -22,7 +22,7 @@ const Table: React.FC = ({ children }) => {
     return () => {
       elm.removeEventListener('scroll', handler);
       window.removeEventListener('resize', handler);
-    }
+    };
   }, []);
 
   return (

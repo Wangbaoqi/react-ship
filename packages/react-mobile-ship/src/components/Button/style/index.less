@@ -1,56 +1,55 @@
-
 @import './var.less';
 
 .@{sp-prefix}-btn {
   position: relative;
   display: inline-block;
+  width: 100%;
+  color: @body-color;
   font-weight: @btn-font-weight;
   line-height: @btn-line-height;
-  color: @body-color;
   white-space: nowrap;
   text-align: center;
   vertical-align: middle;
   background-image: none;
   border: @btn-border-width solid transparent;
   border-radius: @border-radius;
+  outline: none;
   box-shadow: @btn-box-shadow;
   cursor: pointer;
   transition: @btn-transition;
-  outline: none;
-  width: 100%;
   .button-size(@btn-padding-x, @btn-padding-y, @btn-font-size, @btn-height, @btn-width);
 
   &-content {
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
   }
 
   &-icon {
     margin-right: @btn-base-padding;
   }
   &-lg {
-    .button-size(@btn-padding-x-lg, @btn-padding-y-lg, @btn-font-size-lg, @btn-height-lg, @btn-width-lg)
+    .button-size(@btn-padding-x-lg, @btn-padding-y-lg, @btn-font-size-lg, @btn-height-lg, @btn-width-lg);
   }
   &-sm {
-    .button-size(@btn-padding-x-sm, @btn-padding-y-sm, @btn-font-size-sm, @btn-height-sm, @btn-width-sm)
+    .button-size(@btn-padding-x-sm, @btn-padding-y-sm, @btn-font-size-sm, @btn-height-sm, @btn-width-sm);
   }
-  
+
   &-default {
     .button-style(@slate, @slate, @white);
     &.@{sp-prefix}-btn-outline {
       .button-style(@transparent, @slate, @slate);
     }
   }
-  
+
   &-primary {
     .button-style(@primary, @primary, @white);
     &.@{sp-prefix}-btn-outline {
       .button-style(@transparent, @primary, @primary);
     }
   }
-  
+
   &-warning {
     .button-style(@warning, @warning, @white);
     &.@{sp-prefix}-btn-outline {
@@ -69,13 +68,13 @@
       .button-style(@transparent, @danger, @danger);
     }
   }
-  
+
   &-link {
+    color: @link-color;
     background-color: transparent;
     box-shadow: none;
-    color: @link-color;
     &:hover {
-     text-decoration: none;
+      text-decoration: none;
     }
   }
   &-text {
@@ -96,7 +95,6 @@
     display: block;
   }
   &-shape {
-    border-radius: 0
+    border-radius: 0;
   }
-  
 }

@@ -71,7 +71,7 @@ function getSourceType(file: string, source: IPreviewerComponentProps['sources']
   return type as ICodeBlockProps['lang'];
 }
 
-const Previewer: React.FC<IPreviewerProps> = oProps => {
+const Previewer: React.FC<IPreviewerProps> = (oProps) => {
   const demoRef = useRef();
   const { locale } = useContext(context);
   const props = useLocaleProps<IPreviewerProps>(locale, oProps);
@@ -96,7 +96,7 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
   const playgroundUrl = useTSPlaygroundUrl(locale, currentFileCode);
   const iframeRef = useRef<HTMLIFrameElement>();
   const [color] = usePrefersColor();
-  const { actionBarRender = o => o } = props;
+  const { actionBarRender = (o) => o } = props;
 
   // re-render iframe if prefers color changed
   useEffect(() => {
@@ -111,11 +111,7 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
   return (
     <div
       style={props.style}
-      className={[
-        props.className,
-        'sp-previewer',
-        isActive ? 'sp-previewer-target' : '',
-      ]
+      className={[props.className, 'sp-previewer', isActive ? 'sp-previewer-target' : '']
         .filter(Boolean)
         .join(' ')}
       id={props.identifier}
@@ -239,7 +235,7 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
               defaultActiveKey={currentFile}
               onChange={handleFileChange}
             >
-              {Object.keys(props.sources).map(filename => (
+              {Object.keys(props.sources).map((filename) => (
                 <TabPane
                   tab={
                     filename === '_'

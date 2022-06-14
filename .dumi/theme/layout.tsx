@@ -17,9 +17,7 @@ const MobileLayout: React.FC<IRouteComponentProps> = ({ children, ...props }) =>
   } = useContext(context);
   const [demo, setDemo] = useState<IPreviewerComponentProps>(null);
   const hasMobilePreviewer = meta.hasPreviewer && meta.mobile !== false;
-  const showSlugs =
-    Boolean(meta.slugs?.length) &&
-    (meta.toc === 'menu');
+  const showSlugs = Boolean(meta.slugs?.length) && meta.toc === 'menu';
   useEffect(() => {
     const handler = (ev: any) => {
       if (ev.data.type === ACTIVE_MSG_TYPE) {
@@ -49,12 +47,10 @@ const MobileLayout: React.FC<IRouteComponentProps> = ({ children, ...props }) =>
     meta.toc = 'menu';
   }
 
-
-
   return (
     <Layout {...props}>
       <div className="sp-mobile-content">
-        <article >{children}</article>
+        <article>{children}</article>
         {hasMobilePreviewer && demo?.simulator !== false && (
           // render via builtin device simulator
           <Device className="sp-mobile-content-device" url={demo?.demoUrl} />
@@ -72,4 +68,3 @@ const MobileLayout: React.FC<IRouteComponentProps> = ({ children, ...props }) =>
 };
 
 export default MobileLayout;
-

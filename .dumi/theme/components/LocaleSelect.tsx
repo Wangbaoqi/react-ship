@@ -15,7 +15,8 @@ const LocaleSelect: FC<{ location: any }> = ({ location }) => {
 
   function getLocaleTogglePath(target: string) {
     const baseWithoutLocale = base.replace(`/${locale}`, '');
-    const pathnameWithoutLocale = location.pathname.replace(new RegExp(`^${base}(/|$)`), `${baseWithoutLocale}$1`) || '/';
+    const pathnameWithoutLocale =
+      location.pathname.replace(new RegExp(`^${base}(/|$)`), `${baseWithoutLocale}$1`) || '/';
 
     // append locale prefix to path if it is not the default locale
     if (target !== locales[0].name) {
@@ -36,8 +37,11 @@ const LocaleSelect: FC<{ location: any }> = ({ location }) => {
   return firstDiffLocale ? (
     <div className="sp-locale-select" data-locale-count={locales.length}>
       {locales.length > 2 ? (
-        <select value={locale} onChange={ev => history.push(getLocaleTogglePath(ev.target.value))}>
-          {locales.map(localeItem => (
+        <select
+          value={locale}
+          onChange={(ev) => history.push(getLocaleTogglePath(ev.target.value))}
+        >
+          {locales.map((localeItem) => (
             <option value={localeItem.name} key={localeItem.name}>
               {localeItem.label}
             </option>

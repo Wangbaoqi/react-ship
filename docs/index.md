@@ -7,5 +7,4 @@ hero:
       link: /guide
     - text: 组件列表
       link: /components
-
 ---

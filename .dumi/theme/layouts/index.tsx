@@ -1,5 +1,3 @@
-
-
 import React, { useContext, useState, useEffect } from 'react';
 import type { IRouteComponentProps } from '@umijs/types';
 import { context, Link } from 'dumi/theme';
@@ -10,32 +8,30 @@ import SearchBar from '../components/SearchBar';
 import Dark from '../components/Dark';
 import '../style/layout.less';
 
-const Hero = hero => (
+const Hero = (hero) => (
   <>
     <div className="sp-layout-hero">
       {hero.image && <img src={hero.image} />}
-      <div className='sp-layout-hero-left'>
+      <div className="sp-layout-hero-left">
         <div>
           <h1>{hero.title}</h1>
           <p dangerouslySetInnerHTML={{ __html: hero.desc }} />
           {hero.actions &&
-            hero.actions.map(action => (
+            hero.actions.map((action) => (
               <Link to={action.link} key={action.text}>
                 <button type="button">{action.text}</button>
               </Link>
             ))}
         </div>
       </div>
-      <div className='sp-layout-hero-right'>
-        
-      </div>
+      <div className="sp-layout-hero-right"></div>
     </div>
   </>
 );
 
-const Features = features => (
+const Features = (features) => (
   <div className="sp-layout-features">
-    {features.map(feat => (
+    {features.map((feat) => (
       <dl key={feat.title} style={{ backgroundImage: feat.icon ? `url(${feat.icon})` : undefined }}>
         {feat.link ? (
           <Link to={feat.link}>
@@ -49,7 +45,6 @@ const Features = features => (
     ))}
   </div>
 );
-
 
 const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
   const {
@@ -73,14 +68,16 @@ const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
     !meta.gapless;
   const isCN = /^zh|cn$/i.test(locale);
   const updatedTimeIns = new Date(meta.updatedTime);
-  const updatedTime: any = `${updatedTimeIns.toLocaleDateString([], { hour12: false })} ${updatedTimeIns.toLocaleTimeString([], { hour12: false })}`;
+  const updatedTime: any = `${updatedTimeIns.toLocaleDateString([], {
+    hour12: false,
+  })} ${updatedTimeIns.toLocaleTimeString([], { hour12: false })}`;
   const repoPlatform =
     { github: 'GitHub', gitlab: 'GitLab' }[
       (repoUrl || '').match(/(github|gitlab)/)?.[1] || 'nothing'
     ] || platform;
 
   console.log(showHero, 'ssss');
-  
+
   return (
     <div
       className="sp-layout"
@@ -101,52 +98,47 @@ const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
         darkPrefix={
           <Dark
             darkSwitch={darkSwitch}
-            onDarkSwitchClick={ev => {
-              setDarkSwitch(val => !val);
+            onDarkSwitchClick={(ev) => {
+              setDarkSwitch((val) => !val);
               ev.stopPropagation();
             }}
             isSideMenu={false}
           />
         }
-        onMobileMenuClick={ev => {
-          setMenuCollapsed(val => !val);
+        onMobileMenuClick={(ev) => {
+          setMenuCollapsed((val) => !val);
           ev.stopPropagation();
         }}
       />
       <SideMenu
-        darkPrefix={
-          <Dark
-            darkSwitch={darkSwitch}
-            isSideMenu={true}
-          />
-        }
+        darkPrefix={<Dark darkSwitch={darkSwitch} isSideMenu={true} />}
         mobileMenuCollapsed={menuCollapsed}
         location={location}
       />
       {showHero && Hero(meta.hero)}
       {showFeatures && Features(meta.features)}
-      {
-        showHero ? '' :
-          <div className="sp-layout-content">
-            { children }
-            {!showHero && !showFeatures && meta.filePath && !meta.gapless && (
-              <div className="sp-layout-footer-meta">
-                {repoPlatform && (
-                  <Link to={`${repoUrl}/edit/${branch}/${meta.filePath}`}>
-                    {isCN ? `在 ${repoPlatform} 上编辑此页` : `Edit this doc on ${repoPlatform}`}
-                  </Link>
-                )}
-                <span data-updated-text={isCN ? '最后更新时间：' : 'Last update: '}>{updatedTime}</span>
-              </div>
-            )}
-            {(showHero || showFeatures) && meta.footer && (
-              <div
-                className="sp-layout-footer"
-                dangerouslySetInnerHTML={{ __html: meta.footer }}
-              />
-            )}
-          </div>
-      }
+      {showHero ? (
+        ''
+      ) : (
+        <div className="sp-layout-content">
+          {children}
+          {!showHero && !showFeatures && meta.filePath && !meta.gapless && (
+            <div className="sp-layout-footer-meta">
+              {repoPlatform && (
+                <Link to={`${repoUrl}/edit/${branch}/${meta.filePath}`}>
+                  {isCN ? `在 ${repoPlatform} 上编辑此页` : `Edit this doc on ${repoPlatform}`}
+                </Link>
+              )}
+              <span data-updated-text={isCN ? '最后更新时间：' : 'Last update: '}>
+                {updatedTime}
+              </span>
+            </div>
+          )}
+          {(showHero || showFeatures) && meta.footer && (
+            <div className="sp-layout-footer" dangerouslySetInnerHTML={{ __html: meta.footer }} />
+          )}
+        </div>
+      )}
     </div>
   );
 };

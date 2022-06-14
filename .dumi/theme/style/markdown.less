@@ -5,7 +5,7 @@
   font-size: 15px;
   line-height: 1.60625;
 
-  [data-prefers-color=dark] & {
+  [data-prefers-color='dark'] & {
     color: @c-secondary-dark;
   }
 
@@ -25,19 +25,19 @@
     font-weight: 500;
     line-height: 1.40625;
 
-    [data-prefers-color=dark] & {
+    [data-prefers-color='dark'] & {
       color: @c-heading-dark;
     }
 
     // anchor link
     &:hover > a[aria-hidden] {
       float: left;
+      box-sizing: border-box;
+      width: 20px;
       margin-top: 0.06em;
       margin-left: -20px;
-      width: 20px;
       padding-right: 4px;
       line-height: 1;
-      box-sizing: border-box;
 
       @media @mobile {
         width: 14px;
@@ -45,10 +45,10 @@
       }
 
       &::after {
-        content: '#';
         display: inline-block;
-        vertical-align: middle;
         font-size: 20px;
+        vertical-align: middle;
+        content: '#';
       }
 
       span {
@@ -103,7 +103,7 @@
     color: #149ecc;
     background: darken(@c-light-bg, 1%);
 
-    [data-prefers-color=dark] & {
+    [data-prefers-color='dark'] & {
       color: #149ecc;
       background: @c-light-bg-dark;
     }
@@ -134,11 +134,11 @@
   blockquote {
     margin: 16px 0;
     padding: 0 24px;
+    overflow: hidden;
     color: fadeout(@c-text, 30%);
     border-left: 4px solid @c-border;
-    overflow: hidden;
 
-    [data-prefers-color=dark] & {
+    [data-prefers-color='dark'] & {
       color: fadeout(@c-text-dark, 30%);
       border-color: @c-border-dark;
     }
@@ -158,10 +158,10 @@
   // table
   table {
     width: 100%;
-    border-collapse: collapse;
     border: 1px solid @c-border;
+    border-collapse: collapse;
 
-    [data-prefers-color=dark] & {
+    [data-prefers-color='dark'] & {
       border: 1px solid #3b434b;
     }
 
@@ -170,7 +170,7 @@
       padding: 10px 24px;
       border: 1px solid @c-border;
 
-      [data-prefers-color=dark] & {
+      [data-prefers-color='dark'] & {
         border: 1px solid #3b434b;
       }
     }
@@ -179,7 +179,7 @@
       font-weight: 600;
       background: @c-light-bg;
 
-      [data-prefers-color=dark] & {
+      [data-prefers-color='dark'] & {
         background: @c-light-bg-dark;
       }
     }
@@ -199,16 +199,16 @@
   a {
     color: @c-link;
     text-decoration: none;
-    transition: opacity 0.2s;
     outline: none;
+    transition: opacity 0.2s;
 
-    [data-prefers-color=dark] & {
+    [data-prefers-color='dark'] & {
       color: @c-primary-dark;
     }
 
     &:hover {
-      opacity: 0.7;
       text-decoration: underline;
+      opacity: 0.7;
     }
 
     &:active {
@@ -224,13 +224,13 @@
 
 .@{prefix} {
   &-external-link-icon {
-    vertical-align: -0.155em;
     margin-left: 2px;
+    vertical-align: -0.155em;
   }
 }
 
 // For demo
-[data-prefers-color=dark] {
+[data-prefers-color='dark'] {
   h1,
   h2,
   h3,

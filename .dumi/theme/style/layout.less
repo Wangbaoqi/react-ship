@@ -9,10 +9,11 @@ body {
     Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
     Segoe UI Symbol;
   font-variant: tabular-nums;
+  transition: background 0.2s cubic-bezier(0.075, 0.82, 0.165, 1),
+    color 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
   font-feature-settings: 'tnum';
-  transition: background 0.2s cubic-bezier(0.075,0.82,0.165,1), color 0.2s cubic-bezier(0.075,0.82,0.165,1);
 
-  [data-prefers-color=dark] & {
+  [data-prefers-color='dark'] & {
     color: @c-text-dark;
     background-color: @c-bg-dark;
   }
@@ -25,15 +26,15 @@ body {
 
   @media @mobile {
     padding-top: 66px !important;
-    padding-left: 16px !important;
     padding-right: 16px !important;
+    padding-left: 16px !important;
   }
 
   &[data-gapless='true'] {
     padding-top: @s-nav-height !important;
     padding-right: 0 !important;
-    padding-left: 0 !important;
     padding-bottom: 0;
+    padding-left: 0 !important;
 
     @media @mobile {
       padding-top: @s-mobile-nav-height !important;
@@ -64,18 +65,18 @@ body {
     }
 
     .@{prefix}-layout-toc {
+      position: sticky;
+      top: @s-nav-height;
       // top: 114px;
       // max-height: calc(90vh - 144px);
       display: flex;
-      position: sticky;
-      top: @s-nav-height;
       flex-direction: column;
+      box-sizing: border-box;
       width: 120px;
+      padding: 20px 1px 20px 0;
       overflow-x: hidden;
       overflow-y: auto;
       font-size: 13px;
-      box-sizing: border-box;
-      padding: 20px 1px 20px 0;
       @media @mobile {
         display: none;
       }
@@ -83,25 +84,25 @@ body {
   }
 
   &-hero {
+    display: flex;
     // margin: -50px -58px 0;
     // padding: 100px 0;
     width: 100%;
     height: calc(100vh - 60px);
-    display: flex;
     text-align: center;
 
-    [data-prefers-color=dark] & {
+    [data-prefers-color='dark'] & {
       background-color: @c-light-bg-dark;
     }
 
     &-left,
     &-right {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       width: 50%;
       height: 100%;
-    } 
+    }
 
     &-left {
       align-self: center;
@@ -123,12 +124,12 @@ body {
 
     h1 {
       margin: 0 0 16px;
-      font-size: 48px;
-      font-weight: 600;
-      line-height: 56px;
       color: #080e29;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 56px;
 
-      [data-prefers-color=dark] & {
+      [data-prefers-color='dark'] & {
         color: @c-heading-dark;
       }
 
@@ -143,17 +144,17 @@ body {
     }
 
     button {
+      box-sizing: border-box;
+      height: 44px;
       margin-right: 16px;
       padding: 0 32px;
-      height: 44px;
       color: @c-primary;
       font-size: 16px;
       background: transparent;
       border: 1px solid @c-primary;
       border-radius: 22px;
-      box-sizing: border-box;
-      cursor: pointer;
       outline: none;
+      cursor: pointer;
       transition: all 0.3s;
 
       &:hover {
@@ -174,9 +175,9 @@ body {
 
   &-features {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 96px;
     grid-row-gap: 56px;
+    grid-column-gap: 96px;
+    grid-template-columns: repeat(3, 1fr);
     padding: 72px 0;
 
     > dl {
@@ -191,10 +192,10 @@ body {
 
       dt {
         margin-bottom: 12px;
+        color: @c-heading;
         font-size: 20px;
         line-height: 1;
-        color: @c-heading;
-        [data-prefers-color=dark] & {
+        [data-prefers-color='dark'] & {
           color: @c-text-dark;
         }
       }
@@ -207,8 +208,8 @@ body {
         color: @c-link;
         transition: opacity 0.2s;
         &:hover {
-          opacity: 0.7;
           text-decoration: underline;
+          opacity: 0.7;
         }
 
         &:active {
@@ -224,7 +225,7 @@ body {
           font-size: 14px;
           line-height: 22px;
 
-          [data-prefers-color=dark] & {
+          [data-prefers-color='dark'] & {
             color: @c-secondary-dark;
           }
 
@@ -261,9 +262,9 @@ body {
   &-features,
   &-features + &-content,
   &-hero + &-content {
-    margin-left: auto;
-    margin-right: auto;
     max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   &-hero + &-content {
@@ -271,20 +272,20 @@ body {
   }
 
   &-toc {
-    list-style: none;
     position: fixed;
-    z-index: 10;
     top: 50px;
     right: 0;
+    z-index: 10;
+    box-sizing: content-box;
     width: @s-toc-width;
     max-height: calc(90vh - 80px);
     margin: 0;
     padding: 0 24px 0 0;
-    background-color: #fff;
-    box-sizing: content-box;
     overflow: auto;
+    list-style: none;
+    background-color: #fff;
 
-    [data-prefers-color=dark] & {
+    [data-prefers-color='dark'] & {
       background-color: @c-bg-dark;
     }
 
@@ -296,36 +297,36 @@ body {
       position: relative;
       margin: 0;
       padding: 4px 0 4px 6px;
-      text-indent: 12px;
+      overflow: hidden;
       font-size: 13px;
       line-height: 1.40625;
       white-space: nowrap;
+      text-indent: 12px;
       text-overflow: ellipsis;
-      overflow: hidden;
 
       a {
         color: @c-text;
         text-decoration: none;
 
-        [data-prefers-color=dark] & {
+        [data-prefers-color='dark'] & {
           color: @c-text-dark;
         }
 
         &::before {
-          content: '';
           position: absolute;
           top: 0;
-          left: 0;
           bottom: 0;
+          left: 0;
           display: inline-block;
           width: 2px;
           background: @c-border;
+          content: '';
         }
 
         &:hover {
           color: lighten(@c-primary, 5%);
 
-          [data-prefers-color=dark] & {
+          [data-prefers-color='dark'] & {
             color: lighten(@c-primary-dark, 5%);
           }
         }
@@ -333,7 +334,7 @@ body {
         &:active {
           color: lighten(@c-primary, 3%);
 
-          [data-prefers-color=dark] & {
+          [data-prefers-color='dark'] & {
             color: lighten(@c-primary-dark, 3%);
           }
         }
@@ -341,14 +342,14 @@ body {
         &.active {
           color: @c-primary;
 
-          [data-prefers-color=dark] & {
+          [data-prefers-color='dark'] & {
             color: @c-primary-dark;
           }
 
           &::before {
             background: @c-primary;
 
-            [data-prefers-color=dark] & {
+            [data-prefers-color='dark'] & {
               background: @c-primary-dark;
             }
           }
@@ -358,15 +359,15 @@ body {
   }
 
   &-footer-meta {
+    display: flex;
+    justify-content: space-between;
     margin-top: 40px;
     padding: 24px 50px;
-    display: flex;
     color: @c-secondary;
     font-size: 14px;
-    justify-content: space-between;
     border-top: 1px solid @c-border;
 
-    [data-prefers-color=dark] & {
+    [data-prefers-color='dark'] & {
       color: @c-secondary-dark;
       border-color: @c-border-dark;
     }
@@ -376,19 +377,19 @@ body {
     }
 
     > a {
-      margin-bottom: 4px;
       display: block;
+      margin-bottom: 4px;
       color: @c-primary;
-      transition: opacity 0.2s;
       text-decoration: none;
+      transition: opacity 0.2s;
 
-      [data-prefers-color=dark] & {
+      [data-prefers-color='dark'] & {
         color: @c-primary-dark;
       }
 
       &:hover {
-        opacity: 0.7;
         text-decoration: underline;
+        opacity: 0.7;
       }
 
       &:active {
@@ -398,10 +399,10 @@ body {
 
     > span:last-child {
       &::before {
-        content: attr(data-updated-text);
         color: @c-primary;
+        content: attr(data-updated-text);
 
-        [data-prefers-color=dark] & {
+        [data-prefers-color='dark'] & {
           color: @c-primary-dark;
         }
       }
@@ -412,23 +413,21 @@ body {
 .sp-layout-footer {
   margin: 72px 0 -32px;
   padding-top: 24px;
-  border-top: 1px solid @c-border;
   text-align: center;
+  border-top: 1px solid @c-border;
 
-  [data-prefers-color=dark] & {
+  [data-prefers-color='dark'] & {
     border-color: @c-border-dark;
   }
 
   .markdown {
     color: #b0b1ba;
 
-    [data-prefers-color=dark] & {
-      color: rgba(255,255,255,0.45);
+    [data-prefers-color='dark'] & {
+      color: rgba(255, 255, 255, 0.45);
     }
   }
 }
-
-
 
 @media only screen and (max-width: 1440px) {
   @s-menu-width: 240px;
@@ -454,7 +453,6 @@ body {
     flex: 1;
     min-width: 0;
     padding: 50px;
-
 
     > .markdown:first-child > *:first-child {
       margin-top: 0;

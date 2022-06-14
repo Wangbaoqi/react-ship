@@ -92,7 +92,7 @@ export default (props: IPreviewerProps) => {
   }, [props, meta]);
 
   useEffect(() => {
-    const handler = ev => {
+    const handler = (ev) => {
       if (
         ev.data.type === ACTIVE_MSG_TYPE &&
         isActive &&
@@ -119,10 +119,7 @@ export default (props: IPreviewerProps) => {
       ref={ref}
     >
       {previewerProps && (
-        <Previewers
-          className={isActive ? 'sp-previewer-target' : null}
-          {...previewerProps}
-        />
+        <Previewers className={isActive ? 'sp-previewer-target' : null} {...previewerProps} />
       )}
     </div>
   );
