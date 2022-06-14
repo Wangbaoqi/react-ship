@@ -7,7 +7,6 @@ nav:
   order: 1
 ---
 
-## 介绍
+## 快速开始
 
 `react-mobile-ship`是一款基于`React`的移动端组件库。
-
